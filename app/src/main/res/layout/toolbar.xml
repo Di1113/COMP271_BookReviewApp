@@ -11,16 +11,16 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         >
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/Home"
-            android:fontFamily="@font/amiko"
-            android:textColor="@color/titleBlack"
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
-            android:textSize="40sp"
-            />
+            android:fontFamily="@font/amiko"
+            android:text="@string/Home"
+            android:textColor="@color/pageTitleGray"
+            android:textSize="33sp" />
     </RelativeLayout>
 
 

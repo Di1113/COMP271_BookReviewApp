@@ -135,11 +135,11 @@
                 android:id="@+id/delete"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
                 android:layout_below="@id/detail_datetime"
+                android:layout_centerHorizontal="true"
                 android:layout_marginBottom="20dp"
                 android:background="@drawable/round_btn"
-                android:fontFamily="@font/btnfont"
+                android:fontFamily="@font/abeezee"
                 android:text="@string/delete" />
 
         </RelativeLayout>

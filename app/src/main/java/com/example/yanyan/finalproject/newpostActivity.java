@@ -92,7 +92,7 @@ public class newpostActivity extends AppCompatActivity {
         editthoughts = findViewById(R.id.review_edit);
         editthoughts.getText().clear();
 
-        ratingBar = (RatingBar)findViewById(R.id.ratebar);
+        ratingBar = findViewById(R.id.ratebar);
         submit = findViewById(R.id.submit);
         chooseImage = findViewById(R.id.image_select_button);
         takePicture = findViewById(R.id.camera_button);
@@ -201,7 +201,7 @@ public class newpostActivity extends AppCompatActivity {
             newpostLayout.removeView(chooseImage);
             newpostLayout.removeView(takePicture);
 
-            imageview.setImageBitmap(imageUtils.getImage(bookCoverBlob));
+            imageview.setImageBitmap(ImageUtils.getImage(bookCoverBlob));
 //            fetch="YES";
         }
 
@@ -302,7 +302,7 @@ public class newpostActivity extends AppCompatActivity {
             imageview.setImageBitmap(photo);
 
             try {
-                bookCoverBlob = imageUtils.getImageBytes(photo);
+                bookCoverBlob = ImageUtils.getImageBytes(photo);
             }
             catch (NullPointerException e){
                 Toast.makeText(this, "Take or choose a picture please.", Toast.LENGTH_LONG).show();
@@ -314,7 +314,12 @@ public class newpostActivity extends AppCompatActivity {
                 final InputStream imageStream = getContentResolver().openInputStream(imageUri);
                 final Bitmap selectedImage = BitmapFactory.decodeStream(imageStream);
                 imageview.setImageBitmap(selectedImage);
-                bookCoverBlob = imageUtils.getImageBytes(selectedImage);
+                try {
+                    bookCoverBlob = ImageUtils.getBytes(imageStream);
+                }
+                catch(IOException e){
+                    Toast.makeText(this, "Something went wrong", Toast.LENGTH_LONG).show();
+                }
             } catch (FileNotFoundException e) {
                 e.printStackTrace();
                 Toast.makeText(this, "Something went wrong", Toast.LENGTH_LONG).show();

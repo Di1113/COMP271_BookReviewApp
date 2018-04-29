@@ -21,18 +21,19 @@ public class MainActivity extends AppCompatActivity {
     private Context mContext;
     private Activity mActivity;
     private static final int REQUEST_CODE=123;
-    Button start;
+//    Button start;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+//        setContentView(R.layout.activity_main);
 
         mContext = this;
         mActivity =MainActivity.this;
-        start = findViewById(R.id.start);
+//        start = findViewById(R.id.start);
         checkPermission();
 
+        /*
         start.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -44,6 +45,10 @@ public class MainActivity extends AppCompatActivity {
 
 
         });
+        */
+
+        Intent postlistIntent = new Intent(mContext, postlistActivity.class);
+        startActivity(postlistIntent);
 
 
     }

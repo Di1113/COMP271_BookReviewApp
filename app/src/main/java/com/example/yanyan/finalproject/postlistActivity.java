@@ -94,8 +94,8 @@ public class postlistActivity extends AppCompatActivity {
         mDrawerLayout.addDrawerListener(mToggle);
         mToggle.syncState();
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        navigationView = (NavigationView) findViewById(R.id.nav_view);
-        toolbar.setNavigationIcon(ResourcesCompat.getDrawable(getResources(), R.drawable.user_icon, null));
+        navigationView = findViewById(R.id.nav_view);
+        toolbar.setNavigationIcon(ResourcesCompat.getDrawable(getResources(), R.drawable.ic_action_name, null));
         toolbar.setOverflowIcon(ResourcesCompat.getDrawable(getResources(), R.drawable.ic_sort_black_24dp, null));
         setupDrawerContent(navigationView);
 
