@@ -13,6 +13,7 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
+import android.text.Layout;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
@@ -21,6 +22,7 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.RatingBar;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -47,6 +49,7 @@ public class newpostActivity extends AppCompatActivity {
     private Context mContext;
     private static final String TAG = newpostActivity.class.getSimpleName();
     private DatabaseHelper myDb;
+    private RelativeLayout newpostLayout;
     private EditText edittags, editquote, editthoughts;
     private EditText editbook, editauthor;
     private Button submit;
@@ -94,7 +97,8 @@ public class newpostActivity extends AppCompatActivity {
         chooseImage = findViewById(R.id.image_select_button);
         takePicture = findViewById(R.id.camera_button);
         imageview = findViewById(R.id.imageView);
-        fetch ="NO";
+        newpostLayout = findViewById(R.id.newpost);
+//        fetch ="NO";
 
 
         //sharedPreference for autoSave
@@ -192,7 +196,13 @@ public class newpostActivity extends AppCompatActivity {
             editbook.setText(book.getTitle());
             editauthor.setText(book.getAuthor());
             bookcoverURL = book.getCoverUrl();
-            fetch="YES";
+            bookCoverBlob = getImageBLOB(bookcoverURL);
+
+            newpostLayout.removeView(chooseImage);
+            newpostLayout.removeView(takePicture);
+
+            imageview.setImageBitmap(imageUtils.getImage(bookCoverBlob));
+//            fetch="YES";
         }
 
         submit.setOnClickListener(new View.OnClickListener() {
@@ -263,7 +273,7 @@ public class newpostActivity extends AppCompatActivity {
     }
 
     //for URL to convert to BLOB
-    protected byte[] getLogoImage(String url){
+    protected byte[] getImageBLOB(String url){
         try {
             URL imageUrl = new URL(url);
             URLConnection ucon = imageUrl.openConnection();
