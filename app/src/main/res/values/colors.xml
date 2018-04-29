@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="white">#FFFFFF</color>
+    <color name="titleBlack">#2B2B2B</color>
+    <color name="pageTitleGray">#737373</color>
+    <color name="reviewDetailDarkGray">#5D5D5D</color>
+    <color name="rateYellow">#DEAE6B</color>
+    <color name="tagBlue">#7D88A2</color>
+    <color name="transparent">#00000000</color>
+    <color name="border">#BFC1BE</color>
+    <color name="actionbarBackground">#FAFAFA</color>
+    <color name="btn">#FFFFCC</color>
+</resources>
