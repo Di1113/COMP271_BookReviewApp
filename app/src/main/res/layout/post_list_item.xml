@@ -35,11 +35,10 @@
                 android:layout_marginStart="7dp"
                 android:layout_marginTop="8dp"
                 android:fontFamily="@font/amiko"
-                android:lineSpacingExtra="1sp"
                 android:maxLines="3"
                 android:text="Book review………"
                 android:textColor="@color/reviewDetailDarkGray"
-                android:textSize="18sp" />
+                android:textSize="14sp" />
 
             <TextView
                 android:id="@+id/post_hashtag"

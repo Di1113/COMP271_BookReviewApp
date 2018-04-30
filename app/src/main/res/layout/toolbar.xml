@@ -19,7 +19,7 @@
             android:layout_centerVertical="true"
             android:fontFamily="@font/amiko"
             android:text="@string/Home"
-            android:textColor="@color/pageTitleGray"
+            android:textColor="@color/reviewDetailDarkGray"
             android:textSize="33sp" />
     </RelativeLayout>
 
