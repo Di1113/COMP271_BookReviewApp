@@ -1,19 +1,14 @@
 package com.example.yanyan.finalproject;
 
-import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.media.MediaPlayer;
-import android.media.MediaRecorder;
 import android.net.Uri;
 import android.os.Bundle;
-import android.os.Environment;
 import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
-import android.text.Layout;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
@@ -23,19 +18,15 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.RelativeLayout;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import java.io.BufferedInputStream;
-import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
 import java.net.URLConnection;
 import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
 import java.util.Date;
 
 import cz.msebera.android.httpclient.util.ByteArrayBuffer;
@@ -197,9 +188,9 @@ public class newpostActivity extends AppCompatActivity {
             editauthor.setText(book.getAuthor());
             bookcoverURL = book.getCoverUrl();
             bookCoverBlob = getImageBLOB(bookcoverURL);
-
-            newpostLayout.removeView(chooseImage);
-            newpostLayout.removeView(takePicture);
+//
+//            newpostLayout.removeView(chooseImage);
+//            newpostLayout.removeView(takePicture);
 
             imageview.setImageBitmap(ImageUtils.getImage(bookCoverBlob));
 //            fetch="YES";

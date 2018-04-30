@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
+    android:id="@+id/post_detail_layout"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
@@ -9,6 +10,7 @@
     android:layout_marginEnd="20dp">
 
     <ScrollView
+        android:id="@+id/scroll_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_alignParentStart="true"
@@ -21,27 +23,29 @@
             android:layout_alignParentTop="true"
             android:layout_marginTop="18dp"
             android:orientation="vertical">
+
             <TextView
                 android:id="@+id/detail_title"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
-                android:gravity="center"
-                android:textSize="25sp"
-                android:textColor="@color/titleBlack"
                 android:fontFamily="@font/amiko"
-                android:text="@string/book" />
+                android:gravity="center"
+                android:text="@string/book"
+                android:textColor="@color/titleBlack"
+                android:textSize="25sp" />
+
             <TextView
                 android:id="@+id/detail_author"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/detail_title"
                 android:layout_centerHorizontal="true"
-                android:textColor="@color/titleBlack"
                 android:fontFamily="@font/amiko"
-                android:textSize="18sp"
-                android:text="@string/author" />
+                android:text="@string/author"
+                android:textColor="@color/titleBlack"
+                android:textSize="18sp" />
 
             <TextView
                 android:id="@+id/detail_rate"
@@ -49,74 +53,75 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/detail_author"
                 android:layout_centerHorizontal="true"
-                android:textColor="@color/rateYellow"
                 android:fontFamily="@font/amiko"
-                android:textSize="14sp"
-                android:text="@string/rate" />
+                android:text="@string/rate"
+                android:textColor="@color/rateYellow"
+                android:textSize="14sp" />
 
             <RelativeLayout
+                android:id="@+id/detail_reviewgroup"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/detail_reviewgroup"
-                android:layout_alignStart="@+id/detail_title"
-                android:layout_below="@+id/detail_rate"
-                android:layout_marginTop="10dp">
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="136dp">
 
                 <TextView
                     android:id="@+id/detail_quote"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
                     android:layout_centerHorizontal="true"
-                    android:textColor="@color/titleBlack"
+                    android:layout_marginTop="10dp"
                     android:fontFamily="@font/amiko"
-                    android:textSize="14sp"
-                    android:text="@string/quote" />
+                    android:text="@string/quote"
+                    android:textColor="@color/titleBlack"
+                    android:textSize="14sp" />
 
                 <TextView
                     android:id="@+id/detail_tags"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_centerHorizontal="true"
                     android:layout_below="@+id/detail_quote"
+                    android:layout_centerHorizontal="true"
                     android:layout_marginTop="10dp"
-                    android:textColor="@color/titleBlack"
                     android:fontFamily="@font/amiko"
-                    android:textSize="14sp"
-                    android:text="@string/hashtag" />
+                    android:text="@string/hashtag"
+                    android:textColor="@color/titleBlack"
+                    android:textSize="14sp" />
 
                 <TextView
                     android:id="@+id/detail_review_title"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_centerHorizontal="true"
                     android:layout_below="@+id/detail_tags"
+                    android:layout_centerHorizontal="true"
                     android:layout_marginTop="10dp"
-                    android:textColor="@color/titleBlack"
                     android:fontFamily="@font/amiko"
-                    android:textSize="14sp"
-                    android:text="@string/thoughts" />
+                    android:text="@string/thoughts"
+                    android:textColor="@color/titleBlack"
+                    android:textSize="14sp" />
+
                 <TextView
                     android:id="@+id/detail_review"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="30dp"
                     android:layout_below="@+id/detail_review_title"
-                    android:textColor="@color/titleBlack"
+                    android:layout_margin="30dp"
                     android:fontFamily="@font/amiko"
-                    android:textSize="14sp"
-                    android:text="@string/thoughts" />
+                    android:text="@string/thoughts"
+                    android:textColor="@color/titleBlack"
+                    android:textSize="14sp" />
 
 
             </RelativeLayout>
 
             <ImageView
                 android:id="@+id/detail_bookcover"
-                android:layout_below="@id/detail_reviewgroup"
                 android:layout_width="280dp"
                 android:layout_height="360dp"
-                android:layout_marginTop="10dp"
+                android:layout_below="@id/detail_reviewgroup"
                 android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
                 app:srcCompat="@android:drawable/screen_background_dark_transparent" />
 
 
@@ -124,12 +129,12 @@
                 android:id="@+id/detail_datetime"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/datetime"
+                android:layout_below="@+id/detail_bookcover"
                 android:layout_marginTop="20dp"
-                android:textColor="@color/titleBlack"
                 android:fontFamily="@font/amiko"
-                android:textSize="14sp"
-                android:layout_below="@+id/detail_bookcover"/>
+                android:text="@string/datetime"
+                android:textColor="@color/border"
+                android:textSize="14sp" />
 
             <Button
                 android:id="@+id/delete"

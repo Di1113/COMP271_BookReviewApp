@@ -3,39 +3,26 @@ package com.example.yanyan.finalproject;
 import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
-import android.media.MediaPlayer;
 import android.os.Bundle;
-import android.os.Handler;
-import android.os.Message;
 import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
 import android.support.v4.content.res.ResourcesCompat;
-import android.support.v4.view.MenuItemCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
-import android.view.Gravity;
-import android.view.LayoutInflater;
 import android.view.Menu;
-import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.ImageButton;
-import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.SearchView;
 import android.widget.Spinner;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
@@ -220,7 +207,13 @@ public class postlistActivity extends AppCompatActivity {
                 ArrayList<Post> newList = new ArrayList<>();
                 for (Post p : postlist) {
                     String title = p.gettitle().toLowerCase();
-                    if (title.contains(newText))
+                    String quote = p.getquote().toLowerCase();
+                    String tags = p.gethashtag().toLowerCase();
+                    String thought = p.getReviews().toLowerCase();
+                    if (title.contains(newText)
+                            || quote.contains(newText)
+                            || tags.contains(newText)
+                            || thought.contains(newText))
                         newList.add(p);
                 }
 

@@ -4,7 +4,6 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.media.MediaPlayer;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -13,11 +12,6 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
-
-import com.squareup.picasso.Picasso;
-
-import java.io.IOException;
 
 /**
  * Created by yanyan on 4/8/18.
@@ -26,7 +20,7 @@ import java.io.IOException;
 public class PostDetailActivity extends AppCompatActivity {
 
     private Context mContext;
-    private TextView titleTV, authorTV,quoteTV, rateTV, tagTV, reviewTV,datetimeTV;
+    private TextView titleTV, authorTV,quoteTV, rateTV, tagTV, reviewTV,datetimeTV, quoteinBar;
     private ImageButton playbtn, stopbtn;
     private ImageView bookcover;
     private MediaPlayer mediaPlayer;
@@ -37,7 +31,7 @@ public class PostDetailActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setTitle(R.string.PostContent);
-        setContentView(R.layout.post_detail);
+        setContentView(R.layout.post_detail_v2);
 
         mContext=this;
         databaseHelper = new DatabaseHelper(this);
@@ -51,7 +45,7 @@ public class PostDetailActivity extends AppCompatActivity {
         bookcover =findViewById(R.id.detail_bookcover);
         datetimeTV =findViewById(R.id.detail_datetime);
         deletebtn =findViewById(R.id.delete);
-
+        quoteinBar = findViewById(R.id.quote_topbar);
 
         final String title = this.getIntent().getExtras().getString("title");
         String author = this.getIntent().getExtras().getString("author");
@@ -63,7 +57,7 @@ public class PostDetailActivity extends AppCompatActivity {
         final String datetime = this.getIntent().getExtras().getString("datetime");
         byte[] bookcoverBLOB =this.getIntent().getExtras().getByteArray("bookcover");
 
-        bookcover.setImageBitmap(utils.getImage(bookcoverBLOB));
+        bookcover.setImageBitmap(ImageUtils.getImage(bookcoverBLOB));
 
 //        String fetch = this.getIntent().getExtras().getString("fetch");
 //        if (fetch.equals("YES")){
@@ -72,10 +66,11 @@ public class PostDetailActivity extends AppCompatActivity {
 
 
         titleTV.setText(title);
-        authorTV.setText(author);
-        quoteTV.setText("'"+ quote+"'");
+        authorTV.setText("By: " + author);
+        quoteTV.setText("' "+ quote+" '");
+        quoteinBar.setText(quote);
         rateTV.setText(rate);
-        tagTV.setText("Tag: "+ tag);
+        tagTV.setText(tag);
         reviewTV.setText(review);
         datetimeTV.setText("Post Created at: "+datetime);
 

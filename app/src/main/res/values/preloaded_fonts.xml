@@ -3,6 +3,7 @@
     <array name="preloaded_fonts" translatable="false">
         <item>@font/abeezee</item>
         <item>@font/amiko</item>
+        <item>@font/bungee_hairline</item>
         <item>@font/cairo</item>
         <item>@font/cairo_extralight</item>
     </array>
